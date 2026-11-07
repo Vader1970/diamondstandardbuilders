@@ -9,15 +9,10 @@ export function HeroMedia() {
 
   useEffect(() => {
     const reduce = window.matchMedia("(prefers-reduced-motion: reduce)");
-    const mobile = window.matchMedia("(max-width: 767px)");
-    const update = () => setShowVideo(!reduce.matches && !mobile.matches);
+    const update = () => setShowVideo(!reduce.matches);
     update();
     reduce.addEventListener("change", update);
-    mobile.addEventListener("change", update);
-    return () => {
-      reduce.removeEventListener("change", update);
-      mobile.removeEventListener("change", update);
-    };
+    return () => reduce.removeEventListener("change", update);
   }, []);
 
   useEffect(() => {
