@@ -15,7 +15,7 @@ export function Services() {
           </h2>
           <p data-reveal="up" data-delay="120" className="ds-lede">
             From new homes and renovations to outdoor living spaces, explore the building services Diamond Standard
-            Builders could offer for your next project.
+            Builders can offer for your next project.
           </p>
         </div>
         <div className="ds-services">
