@@ -1,6 +1,6 @@
 "use client";
 
-import type { MouseEvent, ReactNode } from "react";
+import type { MouseEvent, ReactNode, Ref } from "react";
 import { scrollToId } from "@/lib/scroll";
 
 type AnchorProps = {
@@ -11,9 +11,10 @@ type AnchorProps = {
   onNavigate?: () => void;
   tabIndex?: number;
   ariaHidden?: boolean | "true" | "false";
+  anchorRef?: Ref<HTMLAnchorElement>;
 };
 
-export function Anchor({ href, className, children, ariaLabel, onNavigate, tabIndex, ariaHidden }: AnchorProps) {
+export function Anchor({ href, className, children, ariaLabel, onNavigate, tabIndex, ariaHidden, anchorRef }: AnchorProps) {
   const onClick = (event: MouseEvent<HTMLAnchorElement>) => {
     onNavigate?.();
     if (!href.startsWith("#")) return;
@@ -23,6 +24,7 @@ export function Anchor({ href, className, children, ariaLabel, onNavigate, tabIn
 
   return (
     <a
+      ref={anchorRef}
       href={href}
       className={className}
       aria-label={ariaLabel}

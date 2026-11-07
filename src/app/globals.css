@@ -1443,7 +1443,7 @@ textarea:focus-visible {
 
 .ds-fact dd {
   margin: 0;
-  flex: 1 1 220px;
+  flex: 1 1 320px;
   min-width: 0;
   font-size: 17px;
   font-weight: 500;
@@ -1869,10 +1869,20 @@ textarea:focus-visible {
     border: 1px solid #34383b;
     transform: translateY(calc(100% + 40px));
     transition: transform 0.45s var(--ease-ds);
+    pointer-events: none;
+  }
+
+  .ds-sticky:hover,
+  .ds-sticky:focus,
+  .ds-sticky:focus-visible,
+  .ds-sticky:active {
+    color: #ffffff;
+    background: #151719;
   }
 
   .ds-sticky.is-on {
     transform: translateY(0);
+    pointer-events: auto;
   }
 }
 
